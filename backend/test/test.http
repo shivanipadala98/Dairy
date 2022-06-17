@@ -1,0 +1,90 @@
+POST http://localhost:3005/register/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"Balu",
+    "email":"Bal100@gmail.com",
+    "password":"balu@123",
+    "mobile":"9491527829",
+    "age":19
+}
+
+//Login
+###
+POST http://localhost:3005/login/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"Bal100@gmail.com",
+    "password":"balu@123"
+}
+
+//Note
+###
+POST http://localhost:3005/dairy/create HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbDEwMEBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImJhbHVAMTIzIiwiaWF0IjoxNjU1MzUzMTU4fQ.kvV7Sm05p7PL9kY6RNMYzLIbmpnuS88N4QPCfaoYMTc
+
+{
+    "description":"This is balu padala.",
+    "date":"2022-06-18",
+    "email":"Balu100@gmail.com"
+}
+
+//Get Notes
+###
+GET http://localhost:3005/dairy/view HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTQ0NH0.KcrERPwrqETS-J094TEB0av_B5d1GDKvRoHLp99o1tw
+
+//Update Notes
+###
+PUT http://localhost:3005/dairy/update HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTQ0NH0.KcrERPwrqETS-J094TEB0av_B5d1GDKvRoHLp99o1tw
+
+{
+    "id":1,
+    "description":"This is Shivani padala.",
+    "email":"Balu100@gmail.com"
+}
+//delete note
+###
+DELETE  http://localhost:3005/dairy/delete/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTQ0NH0.KcrERPwrqETS-J094TEB0av_B5d1GDKvRoHLp99o1tw
+
+//create credentials
+###
+POST http://localhost:3005/credentials/create HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTExN30.pTgpWnuLCIirPE4_THPvV8BpulVpZhMucNX3AsYUKZc
+
+{
+    "platform":"netflix",
+    "username":"Balunetflix",
+    "email":"Balu100@gmail.com",
+    "password":"Balu@1234"
+}
+
+//get creedentials
+###
+GET http://localhost:3005/credentials/view/Balu100@gmail.com HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTExN30.pTgpWnuLCIirPE4_THPvV8BpulVpZhMucNX3AsYUKZc
+
+//update Credentials
+###
+PUT http://localhost:3005/credentials/update HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTExN30.pTgpWnuLCIirPE4_THPvV8BpulVpZhMucNX3AsYUKZc
+
+{
+    "id":2,
+    "platform":"Amazon",
+    "username":"balu120",
+    "email":"Balu100@gmail.com",
+    "password":"Balu123"
+    
+}
+//delete credentials
+###
+DELETE  http://localhost:3005/credentials/delete/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJhbHUxMDBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJiYWx1QDEyMyIsImlhdCI6MTY1NDA2NTQ0NH0.KcrERPwrqETS-J094TEB0av_B5d1GDKvRoHLp99o1tw
